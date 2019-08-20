@@ -11,41 +11,25 @@ class Solution:
     carry = 0
     temp = None
 
-    while l1 is not None and l2 is not None:
-        cur_sum = l1.val + l2.val + carry
+    while l1 is not None or l2 is not None:
+        cur_sum = 0
+        if l1:
+            cur_sum = l1.val
+            l1 = l1.next
+        if l2:
+            cur_sum += l2.val
+            l2 = l2.next
+
+        cur_sum += carry
         carry = cur_sum // 10
         res = cur_sum % 10
+
         if result:
             temp.next = ListNode(res)
             temp = temp.next
         else:
             result = ListNode(res)
             temp = result
-
-        l1 = l1.next
-        l2 = l2.next
-
-    while l1 is not None:
-        cur_sum = l1.val + carry
-        res = cur_sum % 10
-        carry = cur_sum // 10
-        if result:
-            temp.next = ListNode(res)
-            temp = temp.next
-        else:
-            result = ListNode(res)
-        l1 = l1.next
-
-    while l2 is not None:
-        cur_sum = l2.val + carry
-        res = cur_sum % 10
-        carry = cur_sum // 10
-        if result:
-            temp.next = ListNode(res)
-            temp = temp.next
-        else:
-            result = ListNode(res)
-        l2 = l2.next
 
     if carry != 0:
         temp.next = ListNode(1)
