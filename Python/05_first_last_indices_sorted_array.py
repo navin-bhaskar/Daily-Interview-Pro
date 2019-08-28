@@ -10,9 +10,6 @@ class Solution:
         return target_idx
        
     def binSeracTgthMinMaxIdx(self, nums, target, find_min_idx=True):
-        """
-        
-        """
         low = 0
         high = len(nums)
         found = False
@@ -20,7 +17,9 @@ class Solution:
             mid = (high + low) // 2
             # The tgt is in lower half
             if target < nums[mid] or (find_min_idx and target == nums[mid]):
-                high = mid
+                high = mid # if we found the target, keep reducing 
+                # high so that we can get to lowest idx (find_min_idx == True)
+                # Where the low will get stuck at. Eventually high becomes equal to or less than low
             else:
                 low = mid + 1
             if target == nums[mid]:
