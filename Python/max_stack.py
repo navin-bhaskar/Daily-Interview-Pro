@@ -8,6 +8,9 @@ class MaxStack(object):
         self._max_idx = 0
 
     def push(self, item):
+        """Maintain the pointer to the maximum so far and push it to stack
+        along with the data
+        """
         if item > self._max:
             self._max = item
             self._max_idx = len(self._stk)
@@ -24,7 +27,7 @@ class MaxStack(object):
     def max(self):
         if self.__is_empty():
             return None
-        return self._stk[self._stk[-1][0]][1]
+        return self._stk[self._stk[-1][0]][1]  # Get the maximum from the max pointer
 
 def main():
     s = MaxStack()
