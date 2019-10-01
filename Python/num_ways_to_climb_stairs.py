@@ -7,7 +7,9 @@ def staircase_dp(n):
     """
     This is a DP solution to the problem. 
     We solve for each of the sub problem my looking at the ways
-    for a step - 1 and step -2. 
+    for a step - 1 and step -2.
+    This solution is actually solving for Fibonacci series.
+    Another approach is provided below (staircase_fib) with direct Fibonacci solution.
     """
     if n <= 1:
         return 1
@@ -31,7 +33,7 @@ def staircase_fib(n, look_up = {0:1, 1:1}):
     So the sequence we get is 1, 2, 3, 5, ..... which actually is the 
     Fibonacci series.
     This method uses a dictonary as cache/lookup table to store all the 
-    calculated Fibonaci nth term.
+    calculated Fibonacci nth term.
     """
     if n in look_up:
         return look_up[n]
