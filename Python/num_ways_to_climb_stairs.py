@@ -25,10 +25,10 @@ def staircase_dp(n):
 
 def staircase_fib(n, look_up = {0:1, 1:1}):
     """
-    Num of ways for 1 step - 1                                  (1)
-    Num of ways for 2 step - 2, 1                               (2)
-    Num of ways for 3 steps -1 1 1, 2 1, 1 2                    (3)
-    Num of ways for 4 steps -1 1 1 1, 2 2, 1 1 2, 2 1 1, 1 2 1  (5)
+    Num of ways for 1 step - 1                                   (1)
+    Num of ways for 2 steps - 2, 1                               (2)
+    Num of ways for 3 steps - 1 1 1, 2 1, 1 2                    (3)
+    Num of ways for 4 steps - 1 1 1 1, 2 2, 1 1 2, 2 1 1, 1 2 1  (5)
     and so on....
     So the sequence we get is 1, 2, 3, 5, ..... which actually is the 
     Fibonacci series.
